@@ -13,13 +13,15 @@ Código a mais pode ser inserido pelo mantenedor deste repositório afim de escl
 
 ## Vídeos promocionais
 
-<iframe src="//player.vimeo.com/video/30474661" width="500" height="281" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+[Introdução ao Web2py - Bruno Rocha][Intro]
 
-<iframe src="//player.vimeo.com/video/26387038" width="500" height="281" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+[IDE pra que? Web2py + Ipython + VIM + Linux - Bruno Rocha][IDE]
 
-<iframe src="//player.vimeo.com/video/31882548" width="500" height="281" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+[Roteamento, controllers, template render, helpers, views, layout - Bruno rocha][Routes]
 
-
+[Intro]: vimeo.com/30474661
+[IDE]: vimeo.com/26387038
+[Routes]: vimeo.com/31882548
 
 ## Fontes de estudo
 
