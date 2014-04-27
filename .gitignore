@@ -54,4 +54,10 @@ docs/_build/
 
 # Web2py
 web2py/**
+blog/cache/*
+blog/errors/*
+blog/sessions/*
+blog/uploads/*
+blog/databases/*
+blog/private/*
 
