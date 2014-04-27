@@ -22,9 +22,9 @@ Código a mais pode ser inserido pelo mantenedor deste repositório afim de escl
 
 [Roteamento, controllers, template render, helpers, views, layout - Bruno rocha][Routes]
 
-[Intro]: vimeo.com/30474661
-[IDE]: vimeo.com/26387038
-[Routes]: vimeo.com/31882548
+[Intro]: http://vimeo.com/30474661
+[IDE]: http://vimeo.com/26387038
+[Routes]: http://vimeo.com/31882548
 
 ## Fontes de estudo
 
