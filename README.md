@@ -2,7 +2,10 @@ Curso de Web2py
 ===============
 
 Curso de Web2py do Bruno Rocha.
-Neste repositŕio estarão os códigos desenvolvidos no curso de web2py ministrado pelo Bruno Rocha.Recomendo a todos que tiverem oportunidade de faze-lo pois possui excelente didática e excelentes dicas de um especialista no framework.
+
+Neste repositŕio estarão os códigos desenvolvidos no curso de web2py ministrado pelo Bruno Rocha.Recomendo a todos que tiverem
+oportunidade de faze-lo pois possui excelente didática e excelentes dicas de um especialista no framework.
+
 Código a mais pode ser inserido pelo mantenedor deste repositório afim de esclarecer algumas dúvidas e validar conhecimento adquirido.
 
 
