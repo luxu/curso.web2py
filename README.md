@@ -8,6 +8,8 @@ oportunidade de faze-lo pois possui excelente didática e excelentes dicas de um
 
 Código a mais pode ser inserido pelo mantenedor deste repositório afim de esclarecer algumas dúvidas e validar conhecimento adquirido.
 
+No controlador initial foram colocadas algumas anotações que podem ser úteis para referências futuras.
+
 
 ## Requisitos
 
