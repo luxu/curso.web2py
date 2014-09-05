@@ -30,7 +30,7 @@ No controlador initial foram colocadas algumas anotações que podem ser úteis 
 
 ## Fontes de estudo
 
-[Fontes de Estudo - Eric Hidecki][Fontes-Estudo]
+[Fontes de Estudo - Eric Hideki][Fontes-Estudo]
 
 [Aprenda Web2py - Vinícius Assef][Aprenda-Python]
 
