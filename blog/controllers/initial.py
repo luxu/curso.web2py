@@ -43,6 +43,36 @@ row = rows[0]
 cada row representa tupla retornada e caso seja alterada sua mudança
 será refletida no banco de dados.
 
+Anotações da aula 4:
+Exemplo de logging está na raiz e como utilizar é só ler o arquivo.
+No model está a instância do logger.
+
+Nome Handler - Saída
+consoleHandler - console
+rotatingFileHandler - arquivo
+messageBoxHandler - sysnotify
+
+http://127.0.0.1:8000/user/<item>
+login - autenticar
+register - cadastrar
+retrieve_password - esqueci a senha
+profile - perfil do usuário editável
+logout - saída do sitema
+
+
+auth é callable que retorna formulário de autenticação
+
+auth.user ou session.auth.user para informações do usuário autenticado
+auth.user_id e auth.user_groups também estão disponíveis
+
+response.download(request, db) - media não fica no banco de dados
+mas seu caminho sim
+
+Para adicionar campos extras ao usuário
+auth.settings.extra_fields['auth_user'] = [lista de campos extras]
+Exemplo de desabilitar registro
+auth.settings.actions_disabled = ['register']
+
 '''
 
 
@@ -59,8 +89,30 @@ def about():
 
 
 def user():
-    return "user"
+    logger.info(request.args)
+    if request.args(0) == 'register':
+        fields = ['bio', 'photo', 'gender']
+        for field in fields:
+            db.auth_user[field].readable = False
+            db.auth_user[field].writable = False
+    return auth()
+
+
+def register():
+    return auth.register()
+
+
+def login():
+    return auth.login()
+
+
+def account():
+    '''Cuidado pois suário já autenticado irá sofrer redirecionamento'''
+    return{
+        'login': auth.login(),
+        'register': auth.register()
+    }
 
 
 def download():
-    "download"
+    return response.download(request, db)
