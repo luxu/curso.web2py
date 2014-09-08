@@ -9,7 +9,7 @@ config = Storage(
 if request.is_local:
     config.db.uri = 'sqlite://blog_dev.sqlite'
     config.db.check_reserved = ['all']  # somente desenvolvimento
-    response.generic_patterns = ['*.html']
+    response.generic_patterns = ['*']
 else:
     config.db.uri = 'sqlite://blog_prod.sqlite'
     config.db.migrate_enabled = False
@@ -47,3 +47,6 @@ auth.settings.extra_fields['auth_user'] = [
     Field('gender', requires=IS_IN_SET(["male", "female"]))
 ]
 auth.define_tables()
+
+response.title = 'blog'
+response.meta.keywords = "chave,outra e outra"

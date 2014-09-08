@@ -1,0 +1,6 @@
+{{extend 'layout.html' }}
+{{block posts}}
+    {{for post in posts:}}
+        {{include 'includes/post_template.html'}}
+    {{pass}}
+{{end}}

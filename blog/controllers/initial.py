@@ -73,15 +73,59 @@ auth.settings.extra_fields['auth_user'] = [lista de campos extras]
 Exemplo de desabilitar registro
 auth.settings.actions_disabled = ['register']
 
+Anotações da aula 5:
+
+Template do web2py de forma isolada.
+from gluon.template import render
+
+Utilize template com cautela. Não coloque código de controle na view.
+
+Idéia legal: cria página email nas views para emails com html.
+
+response.render para renderizar um template, só passar caminho e
+variáveis do contexto.
+response.render(path,**args)
+
+mudar response.view no controller para mudar o template.
+
+Anotações da aula 6:
+
+action do form como URL para garantir caminho correto.
+
+do gluon.tools tem o prettydate que é função de datas para exibir ao estilo "7 minutos atrás"
+
+
 '''
 
 
 def home():
-    return "Welcome to my blog"
+    posts = db(Post.is_draft==False).select(orderby=~Post.created_on)
+    return {
+        'posts': posts
+    }
+    # return dict(
+    #     nome="Cássio",
+    #     lista=[
+    #         'item1',
+    #         'item2'
+    #     ],
+    #     curso="computação"
+    # )
 
 
 def contact():
-    return "form"
+    if request.env.request_method == "POST":
+        if IS_EMAIL()(request.vars.email)[1]:
+            response.flash = 'Email invalido'
+            redirect(URL('home'))
+        message = request.vars.mensagem
+        mail.send(
+            to=mail.settings.sender,
+            subject="Contato",
+            message=message
+        )
+    return "Email enviado com sucesso!"
+    # redirect(URL('initial','home'))
 
 
 def about():

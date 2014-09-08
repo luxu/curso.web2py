@@ -1,0 +1,9 @@
+<article>
+    <header>
+        <h2>{{=post.title}}</h2>
+    </header>
+    <p>{{=XML(post.post_body)}}</p>
+    <footer>
+        <span>Postado por <b>Sheldon Cooper</b> em <time >{{=post.created_on.strftime("%d/%m/%Y %H:%M")}}</time></span>
+    </footer>
+</article>

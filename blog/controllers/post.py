@@ -1,3 +1,6 @@
+from customvalidators import valida
+
+
 def show():
     return "post"
 
@@ -9,15 +12,26 @@ def edit():
 def delete():
     return "delete"
 
-@auth.requires_login()
+
+@auth.requires(auth.has_membership('admin') or auth.has_membership('editor'))
 def add():
-    logger.info(auth.user_id)
-    logger.info(auth.user_groups)
+    form = SQLFORM(
+        Post,
+        submit_button='enviar'
+    )
+    if form.process(onvalidation=valida).accepted:
+        response.flash = 'post adicionado'
+    elif form.errors:
+        response.flash = 'formulário possui erro'
+    response.view = 'manager/default.html'
+    return {'form': form}
+    # logger.info(auth.user_id)
+    # logger.info(auth.user_groups)
     # logger.debug("Executando a funcao add")
     # logger.info(str(request.vars))
     # try:
-    #     1/0
+    # 1/0
     # except ZeroDivisionError as erro:
-    #     logger.error(str(erro))
+    # logger.error(str(erro))
     # return "add"
-    return SQLFORM(Post).process()
+    # return SQLFORM(Post).process()

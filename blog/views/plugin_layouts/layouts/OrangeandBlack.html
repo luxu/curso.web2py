@@ -72,12 +72,9 @@ div.error { background-color: red; color: white; padding: 3px; }
    <!-- end #logo -->
    <div id="content">
     <div class="flash">{{=response.flash or ''}}</div>
-    {{block main}}
-        {{include}}
-    {{end}}
+    {{include}}
    </div>
    <!-- end #content -->
-   {{block sidebar}}
    <div id="sidebar">
     <ul>
      <li>
@@ -299,24 +296,13 @@ div.error { background-color: red; color: white; padding: 3px; }
      </li>
     </ul>
    </div>
-   {{end}}
    <!-- end #sidebar -->
    <div style="clear: both;">
     &nbsp;
    </div>
   </div>
-  {{block footer}}
+  <!-- end #page -->
   <div id="footer">
-   <form id="contact" method="POST" action="{{=URL(c='initial',f='contact')}}">
-       <h3>Entre em contato</h3>
-       <label>Nome</label>
-       <input type="text" name="nome" id="nome" placeholder="Seu nome" required/>
-       <label>Email</label>
-       <input type="email" name="email" id="email" placeholder="Seu email" required/>
-       <label for="message">Mensagem</label>
-       <textarea name="mensagem" id="mensagem" cols="30" rows="10" required></textarea>
-       <input type="submit" value="Enviar" />
-   </form>
    <p>
     Copyright (c) 2008 Sitename.com. All rights reserved. Design by
     <a href="http://www.freecsstemplates.org/">
@@ -325,7 +311,6 @@ div.error { background-color: red; color: white; padding: 3px; }
     .
    </p>
   </div>
-  {{end}}
   <!-- end #footer -->
  </body>
 </html>
