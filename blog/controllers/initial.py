@@ -94,6 +94,27 @@ action do form como URL para garantir caminho correto.
 
 do gluon.tools tem o prettydate que é função de datas para exibir ao estilo "7 minutos atrás"
 
+Anotações da aula 7:
+
+sqlite quando entra em modo shell realiza lock do arquivo.
+
+proccess das classes Form tem função onvalidation e onaccept
+
+onvalidation = executa após os requires validarem os campos,
+ pode ser útil para uma nova validação
+ ocorre ainda na etapa de validação.
+
+onaccept = momento após formulário ter sido aceito.
+
+Evite HELPERS a todo custo!
+
+Modificar representação em tela de algum campo do banco de dados.
+Post.created_on.represent = lambda valor: prettydate(valor)
+
+SQLFORM.factory - fbrica de formulários customizados
+SQLFORM.grid - grid completo de um model
+SQLFORM.smartgrid -semelhante a grid mas com referencia entra tabelas(references)
+
 
 '''
 
@@ -126,7 +147,6 @@ def contact():
         )
     return "Email enviado com sucesso!"
     # redirect(URL('initial','home'))
-
 
 def about():
     return "sobre o autor"

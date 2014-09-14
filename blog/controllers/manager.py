@@ -28,4 +28,22 @@ def blogs():
 
 @auth.requires_login()
 def users():
-    pass
+    Post.created_on.represent = lambda valor,row: prettydate(valor)
+    Post.category.represent = lambda categories,row: ','.join(
+        db.category[cat].name for cat in categories
+    )
+    Post.id.represent = lambda value,row: A(
+        value,
+        _class="btn btn-primary btn-mini",
+        _href=URL('post',
+                  'edit',
+                  args=value)
+    )
+    grid = SQLFORM.grid(Post)
+    return dict(grid=grid)
+
+def exemplo_smartgrid():
+    grid = SQLFORM.smartgrid(db.blog, linked_tables=['post'])
+    return dict(grid=grid)
+
+

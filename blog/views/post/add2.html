@@ -1,0 +1,26 @@
+{{extend "layout_basic.html"}}
+<h1>Adicione uma postagem</h1>
+<!--Não funciona porque o template básico foi totalmente modificado -->
+{{if form.errors:}}
+<div class="alert-danger">
+    <ul>
+        {{for erro in form.errors:}}
+            {{=erro}}
+        {{pass}}
+    </ul>
+</div>
+{{pass}}
+{{=form.custom.begin}}
+<div>
+    <h2>Dados básicos do formulário</h2>
+    <label for="">{{=form.custom.label.title}}</label>
+    {{=form.custom.widget.title}}
+</div>
+<hr>
+<div>
+    <h2>Dados Adicionais</h2>
+    <label for="">{{=form.custom.label.is_draft}}</label>
+    {{=form.custom.widget.is_draft}}
+</div>
+{{=form.custom.submit}}
+{{form.custom.end}}
