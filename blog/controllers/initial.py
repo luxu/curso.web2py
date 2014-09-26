@@ -115,6 +115,48 @@ SQLFORM.factory - fbrica de formulários customizados
 SQLFORM.grid - grid completo de um model
 SQLFORM.smartgrid -semelhante a grid mas com referencia entra tabelas(references)
 
+Anotações da aula 8:
+
+Requests por segundo tem mais a ver com servidor web  que o framework utilizado
+
+Instalar plugins é só dar upload no w2p.
+Links interessantes:
+
+http://dev.s-cubism.com/web2py_plugins
+http://web2py.com/plugins
+
+Web2py é convention over configuration, mas para algo personalizado sempre tem alguma configuração.
+
+Criação de plugins:
+- Cria módulo com funções e classes no padrão plugin_*
+- cria controller para expor funcionalidade do plugin no padrão plugin_*
+- cria pasta em views plugin_*, cria arquivo dentro com nome da action exposta no controller
+por ultimo vá em plugin e empacotar plugin
+
+LOAD() para utilizar plugin, para ser chamado via ajax...passe parametro ajax = True
+
+db(...).select(cache=(sistema_de_cache, tempo)) para fazer cache de consultas
+ex:
+db(...).select(cache=(cache.ram, tempo))
+cache.ram - guarda na memória
+cache.disk - guarda em disco
+
+outro tipo de cache cache.<ram,disk>(chave, callable, time_expire)
+ex:
+t = cache.ram('time',time.ctime,10)
+
+ou para cada user um cache isolado
+
+t = cache.ram('%s_time'%user.id,time.ctime,10)
+
+
+mais uma maneira de fazer cache com decorador:
+@cache('templatecache',cache_model=cache.ram, time_expire=10)
+def templatecache():
+    ...
+
+session.connect(request, response, db) para colocar sessão em cache
+session.connect(request, response, cookie_key='chave_secreta') para colocar sessão no cookie
 
 '''
 

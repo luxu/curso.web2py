@@ -4,13 +4,15 @@ from customvalidators import valida
 def show():
     return "post"
 
+
 @auth.requires(auth.has_membership('admin') or auth.has_membership('editor'))
 def edit():
     post_id = request.args(0)
     if not Post[post_id]:
         redirect(URL('posts'))
     response.view = 'manager/default.html'
-    return dict(form=SQLFORM(Post,post_id) .process())
+    return dict(form=SQLFORM(Post, post_id) .process())
+
 
 def delete():
     return "delete"
@@ -18,6 +20,7 @@ def delete():
 
 @auth.requires(auth.has_membership('admin') or auth.has_membership('editor'))
 def add():
+    Post.post_body.widget = ckeditor.widget
     form = SQLFORM(
         Post,
         submit_button='enviar'
@@ -67,19 +70,20 @@ def posts():
                 tr.append(TD(row[col]))
     table.append(tr)
     return dict(postagens=table)
-m-dente fsd
 
-def exemplo_factory():m-dente   fsd
+
+def exemplo_factory():
     form = SQLFORM.factory(
         Field("email", requires=IS_EMAIL()),
-        Field("receber_news","boolean")
-        )
+        Field("receber_news", "boolean")
+    )
     if form.process().accepted:
         response.flash = 'OK'
     return dict(form=form)
 
+
 def add2():
-    form = SQLFORM(m-dente  fsd
+    form = SQLFORM(
         Post,
         submit_button='enviar'
     )
@@ -88,19 +92,3 @@ def add2():
     elif form.errors:
         response.flash = 'formulário possui erro'
     return {'form': form}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

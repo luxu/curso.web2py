@@ -14,7 +14,7 @@ No controlador initial foram colocadas algumas anotações que podem ser úteis 
 ## Requisitos
 
 * Python 2.5+
-* Web2py 2.9.5 (earlier versions is not guaranteed)
+* Web2py 2.9.5+ (earlier versions is not guaranteed)
 
 ## Vídeos promocionais
 
