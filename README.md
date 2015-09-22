@@ -33,6 +33,7 @@ No controlador initial foram colocadas algumas anotações que podem ser úteis 
 [Fontes de Estudo - Eric Hideki][Fontes-Estudo]
 
 [Aprenda Web2py - Vinícius Assef][Aprenda-Python]
+
 [web2py - Julia Rizza][web2py]
 
 [Fontes-Estudo]: http://ericstk.wordpress.com/2013/01/08/web2py-fontes-de-estudo/
